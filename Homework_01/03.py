@@ -43,16 +43,15 @@ while (sum < expectedIncome):
 
 if sum == expectedIncome:
     # final output
-    print("At the end we have:\n\
-      Necessity Envelop has:                       " + str(int(necessityEnvelop)) + "\n\
-      Financial Freedom Envelop has:               " + str(int(freedomEnvelop)) + "\n\
-      Education Envelop                            " + str(int(educationEnvelop)) + "\n\
-      Long Term Saving for Spending Envelop has:   " + str(int(longTermEnvelop)) + "\n\
-      Play Envelop has:                            " + str(int(playEnvelop)) + "\n\
-      Give Envelop has:                            " + str(int(giveEnvelop)) + "\n\
-      _______________________________________________________________\n\
-  \
-      Thanks for using our software :)")
+    print(f'At the end we have:\n'
+          f'Necessity Envelop has:                       {str(int(necessityEnvelop))}\n'
+          f'Necessity Envelop has:                       {str(int(necessityEnvelop))}\n'
+          f'Education Envelop                            {str(int(educationEnvelop))}\n'
+          f'Long Term Saving for Spending Envelop has:   {str(int(longTermEnvelop))}\n'
+          f'Play Envelop has:                            {str(int(playEnvelop))}\n'
+          f'Give Envelop has:                            {str(int(giveEnvelop))}\n'
+          f'_______________________________________________________________\n'
+          f'Thanks for using our software :)')
 
     raise SystemExit()
 
