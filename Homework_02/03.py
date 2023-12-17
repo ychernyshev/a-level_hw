@@ -4,14 +4,17 @@
 #
 # 1 F 3 F B F 7 F 9 FB 11 F 13 F B F 17 F
 
-fizz = int(input('Enter the Fizz number: '))
-buzz = int(input('Enter the Buzz number: '))
-random_number = int(input('Enter a random number: '))
+while True:
+    fizz = int(input('\n\nEnter the Fizz number: '))
+    buzz = int(input('Enter the Buzz number: '))
+    random_number = int(input('Enter a random number: '))
 
-for item in range(1, random_number + 1):
-    if item % fizz == 0:
-        print('F', end=' ')
-    elif item % buzz == 0:
-        print('B', end=' ')
-    else:
-        print(item, end=' ')
+    for item in range(1, random_number + 1):
+        if not item % fizz and not item % buzz:
+            print('FB', end=' ')
+        elif not item % fizz:
+            print('F', end=' ')
+        elif not item % buzz:
+            print('B', end=' ')
+        else:
+            print(item, end=' ')
