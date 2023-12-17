@@ -18,15 +18,71 @@
 # Ввести число, вивести усі його дільники
 
 # while True:
-#     number = int(input('\nEnter the some number: '))
-#     if number == 0:
+#     number = int(input('\nEnter the number: '))
+#     if not number:
 #         print('You can\'t divide by 0')
 #     elif number == 1:
 #         print(1)
 #     else:
 #         for item in range(2, number + 1):
 #             if not number % item:
-#                 print(f'{item}', end=' ')
+#                 print(item, end=' ')
 
 
 # Ввести число, вивести його розряди та їх множники.
+digits = {
+    0: '10^2',
+    1: '10^1',
+    2: '10^0',
+}
+
+while True:
+    user_string = input('\n\nEnter the number: ')
+    number = int(user_string)
+    print('-'*32)
+
+    # Divisors of numbers
+    print('Divisors: ', end=' ')
+    if not number:
+        print('You can\'t divide by 0')
+    elif number == 1:
+        print(1)
+    else:
+        for item in range(2, number + 1):
+            if not number % item:
+                print(item, end=' ')
+
+    print('')
+    # Digits of numbers
+    print('Digits:   ', end=' ')
+    list_of_numbers = []
+    for item in user_string:
+        list_of_numbers.append(item)
+
+    number_id = 0
+    if len(list_of_numbers) == 1 and number == 0:
+        pass
+    elif len(list_of_numbers) == 1:
+        digits_id = 2
+        while number_id < len(list_of_numbers):
+            temp = list_of_numbers[number_id]
+            print(f'{temp}*{digits.get(digits_id)}')
+
+            number_id += 1
+            digits_id += 1
+    elif len(list_of_numbers) == 2:
+        digits_id = 1
+        while number_id < len(list_of_numbers):
+            temp = list_of_numbers[number_id]
+            print(f'{temp}*{digits.get(digits_id)}', end=' + ')
+
+            number_id += 1
+            digits_id += 1
+    elif len(list_of_numbers) == 3:
+        digits_id = 0
+        while number_id < len(list_of_numbers):
+            temp = list_of_numbers[number_id]
+            print(f'{temp}*{digits.get(digits_id)}', end=' + ')
+
+            number_id += 1
+            digits_id += 1
