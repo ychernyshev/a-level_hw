@@ -16,7 +16,6 @@
 
 
 # Ввести число, вивести усі його дільники
-
 # while True:
 #     number = int(input('\nEnter the number: '))
 #     if not number:
