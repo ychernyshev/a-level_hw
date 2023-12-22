@@ -66,65 +66,67 @@
 # 05 Банкомат видає суму дрібними, але не більше 10 штук кожної дрібної купюри
 while True:
     nominal_currency = [10, 20, 50]
-    limit = 10
-    limits_table = {}
+    user_nominal = int(input('Enter a sum: '))
 
-    nominal = input('Enter a sum: ')
-    int_nominal = int(nominal)
-    f_hundred = 500
-    t_hundred = 200
-    o_hundred = 100
-
-    if not nominal.isnumeric():
+    if not str(user_nominal).isnumeric():
         print('You need enter a number')
-    elif nominal == '0':
+    elif user_nominal == 0:
         print('You need to enter a sum that is more than 0')
-    elif int_nominal > 800:
+    elif user_nominal > 800:
         print('Sorry, but the ATM will not dispense more than 800₴ at a time')
     else:
-        if int_nominal >= 500:
-            remainder = int_nominal % 500
-            max_nominal = int_nominal - remainder
+        if user_nominal <= 100:
+            print(f'{user_nominal // 10} x 10₴')
 
-            print(remainder)
-            print(max_nominal)
+        if 100 < user_nominal <= 200:
+            temp = user_nominal - 100
+            twenty = user_nominal - temp
+            print(f'{temp // 10} x 10₴')
+            print(f'{twenty // 20} x 20₴')
 
-            # twenty = 0
-            # ten = 0
+        if 200 < user_nominal <= 300:
+            ten = user_nominal - 200
+            twenty = user_nominal - ten
+            print(f'{ten // 10} x 10₴')
+            print(f'{twenty // 20} x 20₴')
 
-        #     if (max_nominal // 50) > 10:
-        #         temporary_list = [int(str(max_nominal // 50)[1])]
-        #         remainder += temporary_list[0] * 50
-        #         max_nominal -= remainder
-        #
-        #     if max_nominal:
-        #         if max_nominal // 50 > 10:
-        #             print('50 > 10')
-        #         else:
-        #             print(f'{max_nominal // 50} x {nominal_currency[2]}₴')
-        #
-        #     if not remainder % 10:
-        #         if remainder // 10 > 10:
-        #             temporary_list = [int(str(remainder // 10)[1])]
-        #             remainder -= temporary_list[0] * 10
-        #             print(f'{temporary_list[0]} x {nominal_currency[0]}₴')
-        #         else:
-        #             print(f'{remainder // 10} x {nominal_currency[0]}₴')
-        #
-        #     if 100 < remainder < 200:
-        #         if not remainder % 20:
-        #             if remainder // 20 > 10:
-        #                 print('20 > 20')
-        #             else:
-        #                 print(f'{remainder // 20} x {nominal_currency[1]}₴')
-        # small = int_nominal % 100
-        # hundred = int_nominal - small
-        # if hundred:
-        #     pass
-            # while limit > 0:
-            #     print(f'{hundred // 10} x {nominal_currency[0]}₴')
-            #
-            #     limit -= 1
-            #     break
-        # if small
+        if 300 < user_nominal <= 400:
+            ten = user_nominal - 300
+            twenty = user_nominal - ten - 100
+            fifty = user_nominal - ten - twenty
+            print(f'{ten // 10} x 10₴')
+            print(f'{twenty // 20} x 20₴')
+            print(f'{fifty // 50} x 50₴')
+
+        if 400 < user_nominal <= 500:
+            ten = user_nominal - 400
+            twenty = user_nominal - ten - 200
+            fifty = user_nominal - ten - twenty
+            print(f'{ten // 10} x 10')
+            print(f'{twenty // 20} x 20')
+            print(f'{fifty // 50} x 50')
+
+        if 500 < user_nominal <= 600:
+            ten = user_nominal - 500
+            twenty = user_nominal - ten - 300
+            fifty = user_nominal - ten - twenty
+            print(f'{ten // 10} x 10')
+            print(f'{twenty // 20} x 20')
+            print(f'{fifty // 50} x 50')
+
+        if 600 < user_nominal <= 700:
+            ten = user_nominal - 600
+            twenty = user_nominal - ten - 400
+            fifty = user_nominal - ten - twenty
+            print(f'{ten // 10} x 10')
+            print(f'{twenty // 20} x 20')
+            print(f'{fifty // 50} x 50')
+
+        if 700 < user_nominal <= 800:
+            ten = user_nominal - 700
+            twenty = user_nominal - ten - 500
+            fifty = user_nominal - ten - twenty
+            print(f'{ten // 10} x 10')
+            print(f'{twenty // 20} x 20')
+            print(f'{fifty // 50} x 50')
 
