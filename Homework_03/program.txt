@@ -1,0 +1,1 @@
+with open('program.txt', 'a') as file:file.writelines(prog)
