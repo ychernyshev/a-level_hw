@@ -37,16 +37,16 @@ courier(13, 4, 3)
 # * *****
 # *** ***
 # * *
-def brilliant(number):
-    if number > 0:
-        for item in range(1, number, 2):
-            string = '*' * item
-            print(string.center(number))
-        for item in range(number, 0, -2):
-            string = '*' * item
-            print(string.center(number))
-    else:
-        print('Number must be positive')
+# def brilliant(number):
+#     if number % 2 and number > 0:
+#         for item in range(1, number, 2):
+#             string = '*' * item
+#             print(string.center(number))
+#         for item in range(number, 0, -2):
+#             string = '*' * item
+#             print(string.center(number))
+#     else:
+#         print('Number must be positive')
 
 # brilliant(15)
 
@@ -124,55 +124,55 @@ def brilliant(number):
 
 
 # Version B
-# filename = 'team_work/text.txt'
-# with open(filename, 'r') as file:
-#     for item in file:
-#         string = item
-#         temporary_r_lst = []
-#         temporary_l_lst = []
-#
-#         r_numbers_lst = []
-#         l_numbers_lst = []
-#
-#         temp_str = ''
-#         l_integer = 0
-#
-#         temp_list = item.split(';')
-#
-#         for item in temp_list[0]:
-#             if item != ' ':
-#                 temporary_l_lst.append(item)
-#
-#         for item in temp_list[1]:
-#             if item != '\n' and item != 'n' and item != ' ':
-#                 temporary_r_lst.append(item)
-#
-#         r_numbers_lst = list(map(int, temporary_r_lst))
-#
-#         l_numbers_lst = list(map(int, temporary_l_lst))
-#
-#         for item in l_numbers_lst:
-#             l_integer += item
-#
-#         l_res_integer = l_integer // len(l_numbers_lst)
-#         l_res_remainder = l_integer % len(l_numbers_lst)
-#
-#         temp_list = []
-#
-#         for item in temporary_l_lst:
-#             temp_list.append(item)
-#
-#         for item in temporary_r_lst:
-#             temp_list.append(item)
-#
-#         temp_list.insert(-2, ';')
-#
-#         string_full = ''
-#
-#         for item in temp_list:
-#             string_full += item + ' '
-#
-#         if l_res_integer == r_numbers_lst[0] and l_res_remainder == r_numbers_lst[1]:
-#             print(f'{string_full} {True}')
-#         else:
-#             print(f'{string_full} {False}')
+filename = 'team_work/text.txt'
+with open(filename, 'r') as file:
+    for item in file:
+        string = item
+        temporary_r_lst = []
+        temporary_l_lst = []
+
+        r_numbers_lst = []
+        l_numbers_lst = []
+
+        temp_str = ''
+        l_integer = 0
+
+        temp_list = item.split(';')
+
+        for item in temp_list[0]:
+            if item != ' ':
+                temporary_l_lst.append(item)
+
+        for item in temp_list[1]:
+            if item != '\n' and item != 'n' and item != ' ':
+                temporary_r_lst.append(item)
+
+        r_numbers_lst = list(map(int, temporary_r_lst))
+
+        l_numbers_lst = list(map(int, temporary_l_lst))
+
+        for item in l_numbers_lst:
+            l_integer += item
+
+        l_res_integer = l_integer // len(l_numbers_lst)
+        l_res_remainder = l_integer % len(l_numbers_lst)
+
+        temp_list = []
+
+        for item in temporary_l_lst:
+            temp_list.append(item)
+
+        for item in temporary_r_lst:
+            temp_list.append(item)
+
+        temp_list.insert(-2, ';')
+
+        string_full = ''
+
+        for item in temp_list:
+            string_full += item + ' '
+
+        if l_res_integer == r_numbers_lst[0] and l_res_remainder == r_numbers_lst[1]:
+            print(f'{string_full} {True}')
+        else:
+            print(f'{string_full} {False}')
