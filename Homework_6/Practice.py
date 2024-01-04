@@ -37,34 +37,41 @@ def squaring_the_number(number):
     return number ** 2
 
 
-def is_simple_number(squaring_the_number, number):
+def prime_number_testing(number):
+    # Prime number testing.
+    # Series of 0 or 1 numbers are filling the number_checking_table following the conditions below
     number_checking_table = []
 
+    if not number > 1:
+        number_checking_table.append(1)
+    else:
+        number_checking_table.append(0)
+
+    if number % 1 and number % number:
+        number_checking_table.append(1)
+    else:
+        number_checking_table.append(0)
+
+    if not number % 2:
+        number_checking_table.append(1)
+    else:
+        number_checking_table.append(0)
+
+    if not number % 3 and number != 3 or not number % 5 and number != 5:
+        number_checking_table.append(1)
+    else:
+        number_checking_table.append(0)
+
+    return number_checking_table
+
+
+def is_simple_number(squaring_the_number, number):
+    # A prime number has every testing result as 0. If one of the testing results is 1, it`s not a prime number
     if number == 0:
         n = number
     else:
-        # Prime number testing
-        if not number > 1:
-            number_checking_table.append(1)
-        else:
-            number_checking_table.append(0)
+        number_checking_table = prime_number_testing(number)
 
-        if number % 1 and number % number:
-            number_checking_table.append(1)
-        else:
-            number_checking_table.append(0)
-
-        if not number % 2:
-            number_checking_table.append(1)
-        else:
-            number_checking_table.append(0)
-
-        if not number % 3 and number != 3 or not number % 5 and number != 5:
-            number_checking_table.append(1)
-        else:
-            number_checking_table.append(0)
-
-        # A prime number has every testing result as 0. If one of the testing results is 1, it`s not a prime number
         if 1 in number_checking_table:
             n = number
         else:
@@ -84,8 +91,8 @@ for number in range(0, 51):
 list_of_numbers_as_int = list(map(int, list_of_numbers_as_str))
 
 # Uncomment for calling the function
-# for number in list_of_numbers_as_int:
-#     is_simple_number(squaring_the_number, number)
+for number in list_of_numbers_as_int:
+    is_simple_number(squaring_the_number, number)
 
 
 # 4. Візьміть файл, в якому є багато англійських слів у рядках.
