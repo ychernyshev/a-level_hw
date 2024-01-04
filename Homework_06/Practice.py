@@ -83,7 +83,6 @@ def is_simple_number(squaring_the_number, number):
 
 
 list_of_numbers_as_str = []
-list_of_numbers_as_int = []
 
 for number in range(0, 51):
     list_of_numbers_as_str.append(str(number))
@@ -91,11 +90,11 @@ for number in range(0, 51):
 list_of_numbers_as_int = list(map(int, list_of_numbers_as_str))
 
 # Uncomment for calling the function
-for number in list_of_numbers_as_int:
-    is_simple_number(squaring_the_number, number)
+# for number in list_of_numbers_as_int:
+#     is_simple_number(squaring_the_number, number)
 
 
-# 4. Візьміть файл, в якому є багато англійських слів у рядках.
+# 3. Візьміть файл, в якому є багато англійських слів у рядках.
 # Порахуйте частоту зустрічі кожного слова та видрукуйте відсортовано.
 def count_of_words_in_the_text_file():
     with open('lorem.txt', 'r') as file:

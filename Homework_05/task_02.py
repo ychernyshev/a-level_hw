@@ -16,29 +16,25 @@ student = {
         'Java',
     },
 }
-reversed_students = dict(reversed(list(student.items())))
+count_of_groups = 0
+persona_groups_number = {}
 
-temp_original = set()
-temp_reversed = set()
-result = None
+for key, value in student.items():
+    persona_groups_number[key] = len(value)
 
-for value in student.values():
-    # temp_original.add(value)
-    temp_original = value
-    # print(temp_original)
-for item in reversed_students.values():
-    temp_reversed = item
-    # print(temp_reversed)
+print(f'List of students who are in more than 2 groups:', end=' ')
+for key, value in persona_groups_number.items():
+    if value >= 2:
+        print(f'{key}', end=' ')
 
-print(temp_reversed)
-print(temp_original)
-result = temp_original.intersection(temp_reversed)
-print(result)
-# result = temp_original.intersection(temp_reversed)
+print(f'\nStudent/s who is/are not in FrontEnd group:', end=' ')
+for key, value in student.items():
+    if not 'FrontEnd' in value:
+        print(f'{key}', end=' ')
 
-# for item in range(len(student)):
-#     print(item)
-
-
-# print(result)
-
+print(f'\nStudents who learn Python or Java:', end=' ')
+for key, value in student.items():
+    if 'Python' in value:
+        print(f'{key}(Python)', end=' ')
+    if 'Java' in value:
+        print(f'{key}(Java)', end=' ')

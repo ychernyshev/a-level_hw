@@ -39,4 +39,4 @@ def mine_zip(first_list, second_list):
         return list_to_symbol_and_to_tuple(first_list, second_list)
 
 
-print(mine_zip(['go', 'one', 5, 400, True, 'lambda'], [1, 2, 3, 4]))
+print(mine_zip([1, 2, 3, 4], ['go', 'one', 5, 400, True, 'lambda']))
