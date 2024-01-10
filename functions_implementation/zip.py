@@ -1,4 +1,4 @@
-# Знайомимось з zip функцією, пробуємо написати свій власний zip
+# Zip implementation
 def list_to_symbol_and_to_tuple(first_argument, second_argument):
     result = []
     i = 1
