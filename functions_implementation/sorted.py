@@ -57,24 +57,23 @@ def usorted(line):
         for item in line:
             reformated_line_to_list.append(item)
 
-    temp = reformated_line_to_list[0]
     if len(reformated_line_to_list) >= 1:
         for item in reformated_line_to_list:
-            print(temp)
             if type(item) == str:
                 for key, value in alphabet.items():
                     if item == value:
                         line_to_indexes.append(key)
             elif type(item) == int or type(item) == float:
-                i = 0
-                # for item in reformated_line_to_list:
-                if temp > item:
-                    temp = item
-                    reformated_line_to_list.remove(item)
-                # print(temp)
-                while i < len(reformated_line_to_list):
+                i = len(reformated_line_to_list)
+                # print(reformated_line_to_list)
+                while len(reformated_line_to_list) > 0:
+                    temp = reformated_line_to_list[0]
+                    for number in range(len(reformated_line_to_list)):
+                        if temp > reformated_line_to_list[number]:
+                            temp = reformated_line_to_list[number]
                     result.append(temp)
-                    i += 1
+
+                    i = reformated_line_to_list.remove(temp)
 
                 return result
         return letters_analyzation(reformated_line_to_list, line_to_indexes, sorted_line_to_indexes)
@@ -85,5 +84,9 @@ def usorted(line):
 print(usorted(("b", "g", "a", "d", "f", "c", "h", "e")))
 print(usorted(("u", "v", "z", "w", "y", "x")))
 x = usorted((1, 2, 5, 4, 3))
+# print(x)
 y = usorted((4, 4, 5, 7, 0))
 print(x, y)
+
+reformated_line_to_list = [1, 2, 5, 4, 3]
+result = []
