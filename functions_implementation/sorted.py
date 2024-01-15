@@ -73,7 +73,9 @@ def usorted(line):
 
     if len(reformated_line_to_list) >= 1:
         for item in reformated_line_to_list:
-            if type(item) == str:
+            if type(item) == str and type(item) == int:
+                print(True)
+            elif type(item) == str:
                 for key, value in alphabet.items():
                     if item == value:
                         line_to_indexes.append(key)
@@ -86,9 +88,10 @@ def usorted(line):
 
 print(usorted(("b", "g", "a", "d", "f", "c", "h", "e")))
 print(usorted(("u", "v", "z", "w", "y", "x")))
+
 x = usorted((1, 2, 5, 4, 3))
 y = usorted((4, 4, 5, 7, 0))
-# print(x, y)
 
-# x = usorted(('1a', '1b', '2a', '3c', '44'))
-# y = usorted(('1g', '1y', '23', '3c'))
+x = usorted(('1a', '1b', '3c', '2d', '44'))
+y = usorted(('1g', '1y', '23', '3c'))
+print(x, y)
